@@ -32,7 +32,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: bus-refresh
+        include: config-refresh
 
 mybatis:
   config-locations: classpath:mybatis/mybatis-config.xml
