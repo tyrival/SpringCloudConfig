@@ -17,6 +17,22 @@ spring:
     url: jdbc:postgresql://localhost:5432/postgres?useUnicode=true&characterEncoding=utf-8
     username: postgres
     password: 123
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
+  cloud:
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
 
 mybatis:
   config-locations: classpath:mybatis/mybatis-config.xml
