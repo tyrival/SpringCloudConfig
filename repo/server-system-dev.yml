@@ -32,7 +32,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: config-refresh
+        include: bus-refresh
 
 mybatis:
   config-locations: classpath:mybatis/mybatis-config.xml
@@ -53,4 +53,4 @@ logging:
 
 # 附件上传的根文件夹名
 attachment:
-  rootPath: attachment
+  rootPath: attachment-1
