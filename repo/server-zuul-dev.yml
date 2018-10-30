@@ -1,0 +1,19 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9001/eureka/
+
+zuul:
+  routes:
+    datacenter:
+      path: /datacenter/**
+      serviceId: server-feign
+
+feign:
+  hystrix:
+    enabled: true
+
+logging:
+  level:
+    root: debug
+  file: datacenter-log/zuul-log:log
