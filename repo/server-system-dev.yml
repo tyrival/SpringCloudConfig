@@ -1,0 +1,40 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9001/eureka/
+
+spring:
+  application:
+    name: server-system
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 0
+      max-file-size: 50MB
+      max-request-size: 100MB
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres?useUnicode=true&characterEncoding=utf-8
+    username: postgres
+    password: 123
+
+mybatis:
+  config-locations: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/**/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+pagehelper:
+  helperDialect: postgresql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+logging:
+  level:
+    root: debug
+  attachment: datacenter-log/system-log:log
+
+# 附件上传的根文件夹名
+attachment:
+  rootPath: attachment
