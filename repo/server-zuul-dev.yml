@@ -13,6 +13,10 @@ feign:
   hystrix:
     enabled: true
 
+filter:
+  token:
+    excludeUri: /login
+
 logging:
   level:
     root: debug
