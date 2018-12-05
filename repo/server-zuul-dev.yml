@@ -6,7 +6,7 @@ eureka:
 zuul:
   routes:
     datacenter:
-      path: /datacenter/**
+      path: /**
       serviceId: server-feign
 
 feign:
