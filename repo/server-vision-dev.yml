@@ -1,0 +1,56 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9001/eureka/
+
+spring:
+  application:
+    name: server-vision
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 0
+      max-file-size: 500MB
+      max-request-size: 500MB
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres?useUnicode=true&characterEncoding=utf-8
+    username: postgres
+    password: 123
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
+  cloud:
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
+
+mybatis:
+  config-locations: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/**/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+pagehelper:
+  helperDialect: postgresql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+logging:
+  level:
+    root: debug
+  attachment: datacenter-log/vision-log:log
+
+# 附件上传的根文件夹名
+attachment:
+  rootPath: attachment
