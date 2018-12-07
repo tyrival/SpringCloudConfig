@@ -15,7 +15,7 @@ feign:
 
 filter:
   token:
-    excludeUri: /login
+    excludeUri: /user/login
 
 logging:
   level:
