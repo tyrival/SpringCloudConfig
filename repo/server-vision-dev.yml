@@ -10,8 +10,8 @@ spring:
     multipart:
       enabled: true
       file-size-threshold: 0
-      max-file-size: 500MB
-      max-request-size: 500MB
+      max-file-size: 500Mb
+      max-request-size: 500Mb
   datasource:
     driverClassName: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/postgres?useUnicode=true&characterEncoding=utf-8
