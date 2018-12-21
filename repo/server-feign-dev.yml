@@ -7,8 +7,8 @@ feign:
   client:
     config:
       default:
-        connectTimeout: 5000
-        readTimeout: 5000
+        connectTimeout: 10000
+        readTimeout: 10000
         loggerLevel: basic
   hystrix:
     enabled: true
@@ -24,3 +24,11 @@ spring:
       enabled: true
       max-file-size: -1
       max-request-size: -1
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
