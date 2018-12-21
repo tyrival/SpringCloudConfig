@@ -7,7 +7,7 @@ zuul:
   routes:
     datacenter:
       path: /**
-      url: http://127.0.0.2:9002
+      url: http://127.0.0.1:9002
       serviceId: server-feign
   max:
     host:
