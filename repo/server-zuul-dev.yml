@@ -7,14 +7,26 @@ zuul:
   routes:
     datacenter:
       path: /**
+      url: http://127.0.0.2:9002
       serviceId: server-feign
+  max:
+    host:
+      connections: 500
   host:
     connect-timeout-millis: 10000
     socket-timeout-millis: 60000
 
-feign:
-  hystrix:
-    enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+
+#feign:
+#  hystrix:
+#    enabled: true
 
 filter:
   token:
