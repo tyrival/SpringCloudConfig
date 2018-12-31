@@ -15,7 +15,7 @@ feign:
 logging:
   level:
     root: debug
-  file: datacenter-log/feign-log:log
+  file: vision-log/feign-log:log
 
 spring:
   servlet:

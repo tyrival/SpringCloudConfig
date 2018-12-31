@@ -5,7 +5,7 @@ eureka:
 
 zuul:
   routes:
-    datacenter:
+    vision:
       path: /**
       serviceId: server-feign
   max:
@@ -36,7 +36,7 @@ filter:
 logging:
   level:
     root: debug
-  file: datacenter-log/zuul-log:log
+  file: vision-log/zuul-log:log
 
 spring:
   servlet:

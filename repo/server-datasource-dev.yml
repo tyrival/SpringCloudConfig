@@ -48,7 +48,7 @@ pagehelper:
 logging:
   level:
     root: debug
-  attachment: datacenter-log/system-log:log
+  attachment: vision-log/datasource-log:log
 
 # 附件上传的根文件夹名
 attachment:

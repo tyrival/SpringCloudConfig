@@ -1,10 +1,11 @@
-logging:
-  level:
-    root: info
-  file: vision-log/elastic-log:log
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9001/eureka/
 
-## Elastic 服务提供者配置
 spring:
+  application:
+    name: server-datasource
   data:
     elasticsearch:
       cluster-name: docker-cluster
@@ -12,3 +13,29 @@ spring:
       cluster-nodes: 127.0.0.1:9200
       repositories:
         enable: true
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: -1
+      max-request-size: -1
+  cloud:
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: admin
+    password: admin
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
+
+logging:
+  level:
+    root: debug
+  attachment: vision-log/elastic-log:log
