@@ -1,0 +1,14 @@
+logging:
+  level:
+    root: info
+  file: vision-log/elastic-log:log
+
+## Elastic 服务提供者配置
+spring:
+  data:
+    elasticsearch:
+      cluster-name: docker-cluster
+      # 节点地址，多个节点用逗号隔开，REST模式为9200，API模式的端口为9300
+      cluster-nodes: 127.0.0.1:9200,127.0.0.2:9200
+      repositories:
+        enable: true
