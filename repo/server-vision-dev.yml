@@ -4,6 +4,13 @@ eureka:
       defaultZone: http://localhost:9001/eureka/
 
 spring:
+  data:
+    elasticsearch:
+      cluster-name: docker-cluster
+      # 节点地址，多个节点用逗号隔开，REST模式为9200，API模式的端口为9300
+      cluster-nodes: 127.0.0.1:9200,127.0.0.2:9200
+      repositories:
+        enable: true
   application:
     name: server-vision
   servlet:
