@@ -18,6 +18,8 @@ logging:
   file: vision-log/feign-log:log
 
 spring:
+  application:
+    name: server-feign
   servlet:
     multipart:
       enabled: true

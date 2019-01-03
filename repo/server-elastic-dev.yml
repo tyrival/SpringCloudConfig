@@ -5,7 +5,7 @@ eureka:
 
 spring:
   application:
-    name: server-datasource
+    name: server-elastic
   data:
     elasticsearch:
       cluster-name: docker-cluster

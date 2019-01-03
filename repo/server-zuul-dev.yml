@@ -39,6 +39,8 @@ logging:
   file: vision-log/zuul-log:log
 
 spring:
+  application:
+    name: server-zuul
   servlet:
     multipart:
       enabled: true
