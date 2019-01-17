@@ -7,10 +7,20 @@ feign:
   client:
     config:
       default:
-        connectTimeout: 10000
-        readTimeout: 10000
+        connectTimeout: 5000
+        readTimeout: 5000
   hystrix:
     enabled: true
+
+ribbon:
+  ConnectTimeout: 5000
+  ReadTimeout: 5000
+  eager-load:
+    enabled: true
+#  # 请求重试次数，可防止网络抖动，但需要防止新增接口出现多次数据插入的情况
+#  OkToRetryOnAllOperations: true
+#  MaxAutoRetries: 1
+#  MaxAutoRetriesNextServer: 1
 
 logging:
   level:
@@ -32,4 +42,4 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 10000
+            timeoutInMilliseconds: 5000
