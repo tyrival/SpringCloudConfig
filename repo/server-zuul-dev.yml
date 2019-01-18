@@ -33,7 +33,9 @@ hystrix:
 
 filter:
   token:
-    excludeUri: /user/login,/attachment/download
+    excludeUri:
+      - ^/user/login
+      - ^/attachment/download
 
 logging:
   level:
