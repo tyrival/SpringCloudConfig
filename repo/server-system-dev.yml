@@ -26,6 +26,18 @@ spring:
     port: 5672
     username: admin
     password: admin
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123
+    maxAttempts: 5
+    timeout: 2000ms
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: 5000
+        max-idle: 50
+        min-idle: 0
 
 management:
   endpoints:
