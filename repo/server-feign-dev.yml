@@ -25,7 +25,7 @@ ribbon:
 logging:
   level:
     root: debug
-  file: vision-log/feign-log:log
+  file: vision-log/feign-log.log
 
 spring:
   application:

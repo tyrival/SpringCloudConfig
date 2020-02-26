@@ -62,7 +62,7 @@ pagehelper:
 logging:
   level:
     root: debug
-  file: vision-log/system-log:log
+  file: vision-log/system-log.log
 
 # 附件上传的根文件夹名
 attachment:

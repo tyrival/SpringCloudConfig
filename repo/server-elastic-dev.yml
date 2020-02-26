@@ -38,4 +38,4 @@ management:
 logging:
   level:
     root: debug
-  file: vision-log/elastic-log:log
+  file: vision-log/elastic-log.log

@@ -40,7 +40,7 @@ filter:
 logging:
   level:
     root: debug
-  file: vision-log/zuul-log:log
+  file: vision-log/zuul-log.log
 
 spring:
   application:
