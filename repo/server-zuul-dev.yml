@@ -4,23 +4,40 @@ eureka:
       defaultZone: http://localhost:9001/eureka/
 
 zuul:
+  # 排除 swagger 和 springboot admin 的资源
+  ignoredPatterns: /swagger-resources/**,/swagger-ui.html,/v2/api-docs,/webjars/**,/actuator,/actuator/**
+  ### 忽略所有的默认路由，由配置文件维护所有路由信息，使网关启动时就默认初始化好各个路由转发的负载均衡对象
+  ignoredServices: '*'
   ribbon:
     eager-load:
       enabled: true
   routes:
+    # 配置websocket请求穿透zuul，直接访问socket服务端
+    socket:
+      path: /websocket
+      url: http://127.0.0.1:9011/
     vision:
       path: /**
       serviceId: server-feign
   max:
     host:
       connections: 500
-  host:
-    connect-timeout-millis: 5000
-    socket-timeout-millis: 5000
+#  host:
+#    connect-timeout-millis: 5000
+#    socket-timeout-millis: 5000
+
+ribbon:
+  ConnectTimeout: 6000
+  ReadTimeout: 6000
+  ### 开启ribbon的饥饿加载模式，并指定需要饥饿加载的服务名
+  eager-load:
+    enabled: true
+    clients: service-feign
 
 hystrix:
   command:
     default:
+      coreSize: 50
       execution:
         isolation:
           thread:
