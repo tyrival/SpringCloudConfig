@@ -17,6 +17,10 @@ ribbon:
   ReadTimeout: 5000
   eager-load:
     enabled: true
+    clients:
+      - service-system
+      - service-vision
+      - service-datasource
 #  # 请求重试次数，可防止网络抖动，但需要防止新增接口出现多次数据插入的情况
 #  OkToRetryOnAllOperations: true
 #  MaxAutoRetries: 1
